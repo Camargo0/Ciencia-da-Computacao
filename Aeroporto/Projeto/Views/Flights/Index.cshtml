@@ -1,0 +1,44 @@
+@model IEnumerable<Flight>
+
+<h2>Flights</h2>
+
+<!-- Formulário de pesquisa -->
+<form method="get">
+    <div class="form-group">
+        <label for="searchOrigin">Search by Origin</label>
+        <input type="text" name="searchOrigin" id="searchOrigin" class="form-control" placeholder="Enter origin" value="@Request.Query["searchOrigin"]" />
+    </div>
+    <div class="form-group">
+        <label for="searchDestination">Search by Destination</label>
+        <input type="text" name="searchDestination" id="searchDestination" class="form-control" placeholder="Enter destination" value="@Request.Query["searchDestination"]" />
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+<!-- Tabela de voos -->
+<table class="table">
+    <thead>
+        <tr>
+            <th>Flight Number</th>
+            <th>Origin</th>
+            <th>Destination</th>
+            <th>Flight Status</th> <!-- Coluna de status do voo -->
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.FlightNumber</td>
+                <td>@item.Origin</td>
+                <td>@item.Destination</td>
+                <td>@item.FlightStatus</td> <!-- Exibindo o status -->
+                <td>
+                    <a href="/Flights/Details/@item.FlightID">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
