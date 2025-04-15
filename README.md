@@ -1,2 +1,6 @@
-# Estrutura-de-dados-1
-Repositório das atividades das aula de estrutura de dados.
+Kaua Everton Camargo - 5° Fase - Unoesc Videira
+
+Projeto foi feito conforme as solicitações dadas pelo professor.
+
+Uso correto de POO, estrutura organizada, cadastro com login e Cookies, validação e tratamento de dados. 
+Utilizado Laragon 
